@@ -7,7 +7,7 @@ var armone = 9.5;
 var armtwo = 11.5;
 var radToDeg = 180 / Math.PI;
 
-//s = servo, suffix = number of servo
+//s = servo, suffix is the servo identifier
 
 var sA = 0;
 var sB = 0;
