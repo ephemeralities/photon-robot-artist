@@ -1,10 +1,10 @@
 //Variables with distance shall be in centimeters, 3 digit variables are in pixels
 //Physical aspects
-var distancefromcanvas = 3;
-var pixelToCm = 15 / 500;
+var distancefromcanvas = 3; //Distance of 1st servo pivot point from the "canvas" (paper)
+var pixelToCm = 15 / 500; // divides the width of the paper (15cm) into 500px (size of html5 canvas)
 var middlepx = 250;
-var armone = 9.5;
-var armtwo = 11.5;
+var armone = 9.5; //Set to your 1st arm length
+var armtwo = 11.5; //Set to your 2nd arm length
 var radToDeg = 180 / Math.PI;
 
 //s = servo, suffix is the servo identifier
@@ -14,7 +14,7 @@ var sB = 0;
 var sC = 0;
 var sD = 0;
 
-var heightDisplace = 3.125;
+var heightDisplace = 3.125; //distance of robot arm from the floor
 
 var g;
 var aTone;
