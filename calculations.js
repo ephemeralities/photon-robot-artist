@@ -91,15 +91,12 @@ function send(tosend){
     http.open("post",url,true);
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     http.send("args=" + tosend);
-    //console.log(http.responseText);
 }
 
 //function allows user to manually input servo values. The function automatically sends the inputs as a formatted string.
 function indvsend(a,b,c,d){
     var string = '';
     var vals = [a,b,c,d];
-    if(c < 20 || b < 20 || b > 90)
-        console.log("I suggest trying different angle measures lest you destroy the robot");
     for(var i = 0; i < 4; i++){
         if(vals[i] < 100 && vals[i] > 0)
             if(vals[i] > 9)
