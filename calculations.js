@@ -35,7 +35,6 @@ B is the side of the triangle
 C is the hypotenuse of the triangle
 */
 
-//not sure if Math.round() will alter the accuracy of calculations.
 //Calculates where to point the robotic arm
 
 function calculateFloorAngle(x,y){
