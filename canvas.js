@@ -1,12 +1,7 @@
 console.clear();
 
-/*length of stroke (in points)
-Length of stroke is specified in the Particle Photon int array
-Currently holds 100 points
-*/
+//Stroke length is not used anymore
 var strokeLength = 0;
-
-var test;
 
 var mouseClicked = false;
 
@@ -19,7 +14,7 @@ var canvas = document.createElement("canvas");
 document.body.appendChild(canvas);
 var ctx = canvas.getContext("2d");
 var mouseX, mouseY,prevmouseX,prevmouseY;
-var gap = 20;
+var gap = 20; //this is the gap between two points (px). It serves to limit the amount of calls made to the Photon
 canvas.width = 500;
 canvas.height = 450;
 ctx.fillStyle = "#FFFFFF";
@@ -38,11 +33,9 @@ window.onload = function() {
     ctx.fillStyle = "#000000";
 
     canvas.onmousemove = function(e) {
-        test = e;
         mouseX = e.clientX - 10;
         mouseY = 500 - e.clientY + 10;
         if (mouseClicked == true){
-            //if(strokeLength < 100){
                 if((mouseX > prevmouseX + gap || mouseX < prevmouseX - gap) || (mouseY > prevmouseY + gap || mouseY < prevmouseY - gap)){
                     ctx.lineTo(mouseX, 500 - mouseY);
                     countBox.innerHTML = "Current stroke length: " + strokeLength;
@@ -52,9 +45,6 @@ window.onload = function() {
                     console.log("X: " + mouseX + " Y:" + mouseY);
                     strokeLength++;
                 }
-            //}else{
-            //    countBox.innerHTML = "You have exceeded the max stroke limit, any continued drawing will be ignored";
-            //}
             ctx.stroke();
         }
     };
@@ -65,10 +55,9 @@ window.onload = function() {
         }
         mouseClicked = true;
         dropPen();
-        ctx.lineWidth = 5;
+        ctx.lineWidth = 5; //Sets the thickness of the line on the canvas
     };
     canvas.onmouseup = function() {
-        //console.clear()
         liftPen();
         strokeLength = 0;
         mouseClicked = false;
